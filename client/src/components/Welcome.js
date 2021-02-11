@@ -1,4 +1,9 @@
 import "./style.css";
+import Navbar from "./Navbar";
+/*
+Welcome Page or Feed
+
+*/
 var images = [
   {
     src_link:
@@ -14,6 +19,9 @@ var images = [
 function Welcome() {
   return (
     <div class="Welcome">
+      <Navbar/> {/*Upper Navbar common to all Pages*/ }
+      
+      {/*Image Corousal Option*/}
       <div className="img_corousal">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -21,7 +29,7 @@ function Welcome() {
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
           </ol>
-
+          {/**/}
           <div class="carousel-inner">
             <div class="item active">
               <img
@@ -33,6 +41,7 @@ function Welcome() {
                 <p>LA is always so much fun!</p>
               </div>
             </div>
+            {/*Iterate through Images*/}
             {images.map((image) => (
               <div class="item">
                 <img src={image.src_link} alt="Chicago" />
@@ -61,23 +70,15 @@ function Welcome() {
           </div>
         </div>
       </div>
-      <div className="join_group">
-        <form>
-          <div class="form-group">
-            <h1>Join Group</h1>
-            <label for="group_code">Group Code</label>
-            <input type="email" class="form-control" id="email" />
-          </div>
-          <button type="submit" class="btn btn-default">
-            Join Group
-          </button>
-        </form>
-      </div>
+
+      {/*Photo Sharing UI*/}
+
       <div className="share_photo">
         <label class="form-label" for="customFile">
           <h1>Share Photo</h1>
         </label>
         <input type="file" class="form-control" id="customFile" />
+        {/*Select people to share photo*/}
         <form>
           <label class="checkbox-inline">
             <input type="checkbox" value="" />

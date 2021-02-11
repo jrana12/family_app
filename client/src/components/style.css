@@ -4,8 +4,12 @@
     margin-right: 50px;
 }
 .img_corousal{
-    height: 650px;
+     height: 500px;
 }
 .share_photo, .join_group{
     margin-left:10px;
+}
+
+.profile_section{
+    margin-left:125px;
 }
