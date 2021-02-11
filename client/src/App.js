@@ -1,9 +1,11 @@
+import React, { useEffect, useState } from "react";
 import Home from "./components/Home";
 import Welcome from "./components/Welcome";
 import MyProfile from "./components/MyProfile";
 import MyFamily from "./components/MyFamily";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import db from "./firebase"
 
 /*
 install materialsui core
@@ -11,6 +13,9 @@ install materialsui core
 
 */
 function App() {
+
+  const [user, setUser] = useState(null);
+
   return (
     <Router>
       <Switch>

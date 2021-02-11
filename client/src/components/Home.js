@@ -1,47 +1,39 @@
 import "./style.css";
-
+import db, { auth, provider } from "../firebase";
 function Home() {
+  const signIn = (e) => {
+    var user_email = "";
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        user_email = result.user.email;
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+    db.collection("users")
+      .where("email", "==", user_email)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+        });
+      })
+      .catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+  };
+
+  //const signIn = (e) =>{
+  //alert("hello");
+  //}
   return (
     <div class="Home">
-      <div className="signin_card">
-        <form>
-          <h1>Sign In</h1>
-          <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email" />
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" />
-          </div>
-          <button type="submit" class="btn btn-default">
-            Sign In
-          </button>
-        </form>
-      </div>
-      <div className="signin_card">
-        <form>
-          <div class="form-group">
-            <h1>Sign Up</h1>
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email" />
-          </div>
-          <div class="form-group">
-            <label for="email">Name:</label>
-            <input type="email" class="form-control" id="email" />
-          </div>
-          <div class="form-group">
-            <label for="email">Age</label>
-            <input type="email" class="form-control" id="email" />
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" />
-          </div>
-          <button type="submit" class="btn btn-default">
-            Sign Up
-          </button>
-        </form>
+      <div className="login_container">
+        <img src="https://assets.awwwards.com/awards/images/2012/12/best-logo-2013-3.jpg" />
+        <br></br>
+        <button onClick={signIn}>Login with Google</button>
       </div>
     </div>
   );
