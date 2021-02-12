@@ -1,6 +1,23 @@
 import "./style.css";
+import { useHistory } from 'react-router-dom';
 {/*Upper Navigation Bar*/}
-function Navbar(){
+function Navbar()
+{
+  const to_profile = (e) => {
+      history.push('/myprofile');
+  };
+  const to_family = (e) => {
+    history.push('/myfamily');
+};
+const to_home = (e) => {
+  history.push('/welcome');
+};
+
+const signout = (e) => {
+  history.push('/');
+};
+
+  const history = useHistory();
     return (
 <div classNane="Navbar"><nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -8,12 +25,12 @@ function Navbar(){
       <a class="navbar-brand">Family_App</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">My Profile</a></li>
-      <li><a href="#">My Family</a></li>
+      <li><button onClick={to_home}>Home</button></li>
+      <li><button onClick={to_profile} >My Profile</button></li>
+      <li><button onClick={to_family}>My Family</button></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
+    <li><button onClick={signout}>Sign Out</button></li>
     </ul>
   </div>
 </nav>

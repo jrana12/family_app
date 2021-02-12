@@ -1,28 +1,26 @@
 import "./style.css";
 import db, { auth, provider } from "../firebase";
+import { useStateValue } from "../StateProvider";
+import { actionTypes } from "../reducer";
+import { useHistory } from 'react-router-dom';
 function Home() {
+  const history = useHistory();
+  const [state, dispatch] = useStateValue();
   const signIn = (e) => {
     var user_email = "";
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        user_email = result.user.email;
+        console.log(result);
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user
+        })
       })
       .catch((error) => {
         console.log(error.message);
       });
-    db.collection("users")
-      .where("email", "==", user_email)
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-        });
-      })
-      .catch((error) => {
-        console.log("Error getting documents: ", error);
-      });
+      history.push('/welcome');
   };
 
   //const signIn = (e) =>{

@@ -6,22 +6,20 @@ import MyFamily from "./components/MyFamily";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import db from "./firebase"
+import { useStateValue } from "./StateProvider";
 
-/*
-install materialsui core
-
-
-*/
 function App() {
 
-  const [user, setUser] = useState(null);
+  const [{user},dispatch] = useStateValue();
 
   return (
     <Router>
+      {!user?(
+        <Home/>
+      )
+      :
+      <>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
         <Route exact path="/welcome">
           <Welcome/>
         </Route>
@@ -32,6 +30,8 @@ function App() {
           <MyFamily/>
         </Route>
       </Switch>
+      </>
+}
     </Router>
   );
 }

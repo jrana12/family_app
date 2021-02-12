@@ -1,12 +1,16 @@
 import "./style.css";
 import Navbar from "./Navbar";
+import { useStateValue } from "../StateProvider";
+
 {/* My profile Section, addable but uneditable*/}
 function MyProfile() {
+
+  const [{user}] = useStateValue();
   return (
     <div classNane="MyProfile">
         <Navbar/>
-      <img src=".. " alt="My photo"></img>
-      <h1>Display Name</h1>
+      {user?<img src = {user.photoURL}/>:<img></img>}
+  {user?<h1>{user.displayName}</h1>:<h1>Display Name</h1>}
       {/*Dropdown to select members to be added as family*/}
       <div class="dropdown">
         <button
