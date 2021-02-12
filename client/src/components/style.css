@@ -31,3 +31,9 @@
 .login_container >button{
     padding:10px;
 }
+
+.profile_cont{
+    margin:auto;    
+    text-align: center;
+    width: 500px;
+}

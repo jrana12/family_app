@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Welcome from "./components/Welcome";
 import MyProfile from "./components/MyProfile";
 import MyFamily from "./components/MyFamily";
+import Location from "./components/Location";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import db from "./firebase"
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route exact path="/myfamily">
           <MyFamily/>
+        </Route>
+        <Route exact path="/location">
+          <Location/>
         </Route>
       </Switch>
       </>

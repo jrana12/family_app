@@ -14,7 +14,7 @@ function MyFamily() {
                 height="200px"
                 alt="Image of person"
               />
-              <h3>Name of person</h3>
+              <h3>U Rana</h3>
             </div>
           </div>
           <div class="col-sm-9 col-md-4">
@@ -24,7 +24,7 @@ function MyFamily() {
                 height="200px"
                 alt="Image of person"
               />
-              <h3>Name of person</h3>
+              <h3>K Rana</h3>
             </div>
           </div>
           <div class="col-sm-9 col-md-4">
@@ -34,7 +34,7 @@ function MyFamily() {
                 height="200px"
                 alt="Image of person"
               />
-              <h3>Name of person</h3>
+              <h3>T Rana</h3>
             </div>
           </div>
           <div class="col-sm-9 col-md-4">
@@ -44,7 +44,7 @@ function MyFamily() {
                 height="200px"
                 alt="Image of person"
               />
-              <h3>Name of person</h3>
+              <h3>A Rana</h3>
             </div>
           </div>
           <div class="col-sm-9 col-md-4">
@@ -54,7 +54,7 @@ function MyFamily() {
                 height="200px"
                 alt="Image of person"
               />
-              <h3>Name of person</h3>
+              <h3>V Rana</h3>
             </div>
           </div>
         </div>

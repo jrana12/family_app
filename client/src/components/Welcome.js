@@ -7,7 +7,7 @@ Welcome Page or Feed
 var images = [
   {
     src_link:
-      "https://upload.wikimedia.org/wikipedia/commons/4/47/Snowboarder_in_flight_%28Tannheim%2C_Austria%29.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5413tyoKhkbY8zWF04PbJRPOQf3_QBxUCLg&usqp=CAU",
     caption: "Hello",
   },
   {
