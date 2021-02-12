@@ -5,8 +5,8 @@ class Location extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      latitude: 22.5804288,
-      longitude: 88.3785728,
+      latitude: null,
+      longitude: null,
     };
   }
 
@@ -19,9 +19,12 @@ class Location extends Component {
         }),
       (err) => console.log(err)
     );
-    alert(
+    if(this.state.latitude!=null)
+    {
+      alert(
       "Current Location is\n" + this.state.latitude + " " + this.state.longitude
-    );
+      );
+      }
   };
 
   render() {
